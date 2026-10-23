@@ -1,0 +1,3 @@
+User-agent: *
+Disallow: /
+# Docasne: web este nema produkty. Po nahrati prvych dizajnov zmenit na Allow a pridat Sitemap.
