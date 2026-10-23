@@ -68,6 +68,19 @@ button{font:inherit;color:inherit}
 .social a{display:grid;place-items:center;width:40px;height:40px;border-radius:999px;text-decoration:none;color:var(--ink);transition:background .15s}
 .social a:hover{background:var(--soft)}
 .social svg{width:20px;height:20px}
+.social a.amz{display:inline-flex;align-items:center;width:auto;gap:7px;padding:0 14px 0 12px;background:var(--ink);color:var(--bg);font-weight:800;font-size:14px}
+.social a.amz:hover{background:var(--pop);color:#fff}
+.social a.amz svg{width:18px;height:18px}
+@media (max-width:440px){.social a.amz span{display:none}.social a.amz{width:40px;padding:0}}
+/* sister brand */
+.sister{margin-top:clamp(40px,6vw,64px)}
+.sister .box{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:16px 22px;align-items:center;background:var(--t4);border-radius:24px;padding:clamp(18px,3vw,28px)}
+.sister .ic{width:64px;height:64px;border-radius:18px;background:var(--paper);display:grid;place-items:center;box-shadow:var(--shadow)}
+.sister .ic svg{width:34px;height:34px;color:var(--pop)}
+.sister small{font-size:12px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.sister h2{font-family:var(--display);font-weight:800;font-size:clamp(22px,2.6vw,28px);letter-spacing:-.02em;line-height:1.1;margin:2px 0 4px}
+.sister p{margin:0;color:var(--muted);font-weight:500}
+@media (max-width:640px){.sister .box{grid-template-columns:auto minmax(0,1fr)}.sister .box .btn{grid-column:1/-1}}
 @media (max-width:700px){
   .top .wrap{flex-wrap:wrap;gap:10px;padding-block:10px}
   .search{order:3;flex:1 1 100%;max-width:none}
@@ -205,7 +218,8 @@ footer .wrap{display:flex;gap:8px 20px;flex-wrap:wrap;justify-content:space-betw
       <input id="q" type="search" placeholder="Search designs – hiking, dogs, puzzles…" autocomplete="off" aria-label="Search designs">
       <button class="clear" id="clear" type="button" aria-label="Clear search" hidden><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
     </label>
-    <nav class="social" aria-label="Social">
+    <nav class="social" aria-label="Shop and social">
+      <a class="amz" href="https://www.amazon.com/s?k=Snarkfern&rh=p_89%3ASnarkfern" target="_blank" rel="noopener" aria-label="All Snarkfern designs on Amazon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M5 8h14l-1.2 11.2a2 2 0 0 1-2 1.8H8.2a2 2 0 0 1-2-1.8z"/><path d="M9 10V7a3 3 0 0 1 6 0v3"/></svg><span>Amazon</span></a>
       <a href="https://www.instagram.com/snarkfern/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a>
       <a href="https://www.pinterest.com/snarkfern/" target="_blank" rel="noopener" aria-label="Pinterest"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-3.6 19.3c-.1-.8-.2-2 0-2.9l1.2-5s-.3-.6-.3-1.5c0-1.4.8-2.5 1.8-2.5.9 0 1.3.6 1.3 1.4 0 .9-.6 2.2-.8 3.4-.3 1 .5 1.8 1.5 1.8 1.8 0 3.1-1.9 3.1-4.6 0-2.4-1.7-4.1-4.2-4.1-2.9 0-4.5 2.1-4.5 4.4 0 .9.3 1.8.8 2.3l.1.4-.3 1.1c0 .2-.2.2-.4.1-1.3-.6-2.1-2.5-2.1-4 0-3.3 2.4-6.3 6.9-6.3 3.6 0 6.4 2.6 6.4 6 0 3.6-2.3 6.5-5.4 6.5-1.1 0-2.1-.6-2.4-1.2l-.7 2.5c-.2.9-.9 2.1-1.3 2.8A10 10 0 1 0 12 2z"/></svg></a>
     </nav>
@@ -273,6 +287,13 @@ footer .wrap{display:flex;gap:8px 20px;flex-wrap:wrap;justify-content:space-betw
       <p>We are printing the first batch right now. Follow us on Instagram or Pinterest to see them first.</p>
     </div>
   </section>
+  <section class="sister wrap" aria-label="Sister shop">
+    <div class="box">
+      <div class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v15H6.5A2.5 2.5 0 0 0 4 20.5z"/><path d="M4 20.5A2.5 2.5 0 0 0 6.5 23H20v-5"/><path d="M9 8h7M9 12h5"/></svg></div>
+      <div><small>Our sister shop</small><h2>Love puzzles &amp; cozy hobbies? Meet Zestfern Books.</h2><p>Puzzle books, coloring books and journals from the same little studio.</p></div>
+      <a class="btn" href="https://zestfern.github.io/" target="_blank" rel="noopener">Visit Zestfern Books <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+    </div>
+  </section>
 </main>
 
 <section class="follow">
@@ -288,7 +309,7 @@ footer .wrap{display:flex;gap:8px 20px;flex-wrap:wrap;justify-content:space-betw
 <footer>
   <div class="wrap">
     <span>© <span id="yr"></span> Snarkfern. Independent designs, printed on demand and shipped by Amazon and Redbubble.</span>
-    <span>Prices, sizes and colors are shown on the store page.</span>
+    <span><a href="https://www.amazon.com/s?k=Snarkfern&rh=p_89%3ASnarkfern" target="_blank" rel="noopener">All designs on Amazon</a> · Sister shop: <a href="https://zestfern.github.io/" target="_blank" rel="noopener">Zestfern Books</a> · Prices, sizes and colors are shown on the store page.</span>
   </div>
 </footer>
 
