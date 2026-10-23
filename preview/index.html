@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Snarkfern – Funny shirts for people with hobbies</title>
-<meta name="description" content="Snarkfern – witty t-shirts and hoodies for hikers, skiers, puzzlers, dog people and everyone with a hobby. Printed on demand and delivered by Amazon.">
+<meta name="description" content="Snarkfern – witty t-shirts for hikers, skiers, puzzlers, dog people and everyone with a hobby. Printed on demand and delivered by Amazon.">
 <meta property="og:title" content="Snarkfern – Funny shirts for people with hobbies">
-<meta property="og:description" content="Witty t-shirts and hoodies for people with hobbies. Printed on demand and delivered by Amazon.">
+<meta property="og:description" content="Witty t-shirts for people with hobbies. Printed on demand and delivered by Amazon.">
 <meta name="robots" content="noindex,nofollow">
 <meta name="theme-color" content="#FBF8F3">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='18' fill='%2314B866'/%3E%3Cpath d='M32 52V14M32 20l-9-6M32 28l-12-7M32 36l-13-6M32 44l-11-4M32 20l9-6M32 28l12-7M32 36l13-6M32 44l11-4' stroke='%23fff' stroke-width='4' stroke-linecap='round' fill='none'/%3E%3C/svg%3E">
@@ -17,7 +17,7 @@
 :root{
   --bg:#FBF8F3; --sand:#F2EBE0; --paper:#FFFFFF; --ink:#161716; --muted:#5E625C; --line:#E6E0D5;
   --fern:#14B866; --fern-dark:#0B5E36; --fern-soft:#E2F5EA; --pop:#FF5B36; --pop-hover:#EC4A26; --sun:#FFD84A;
-  --night:#14201A;
+  --night:#14201A; --head:68px; --side:272px;
   --shadow:0 1px 2px rgba(22,23,22,.05),0 10px 30px rgba(22,23,22,.08);
   --display:"Bricolage Grotesque","Avenir Next","Segoe UI",system-ui,sans-serif;
   --body:"Figtree","Segoe UI",system-ui,sans-serif;
@@ -32,7 +32,7 @@
   --fern:#2FD27F; --fern-dark:#8FE6B6; --fern-soft:#16291D; --pop:#FF6A47; --pop-hover:#FF805F; --night:#0B100D;
   --shadow:0 1px 2px rgba(0,0,0,.4),0 10px 30px rgba(0,0,0,.35); color-scheme:dark}
 *{box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:80px}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--head) + 12px)}
 html,body{margin:0}
 body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.5;-webkit-font-smoothing:antialiased;overflow-x:hidden}
 img{max-width:100%;display:block}
@@ -40,23 +40,23 @@ a{color:inherit}
 button{font:inherit;color:inherit}
 [hidden]{display:none!important}
 :focus-visible{outline:3px solid var(--fern);outline-offset:2px;border-radius:6px}
-.wrap{max-width:1320px;margin:0 auto;padding-left:max(20px,env(safe-area-inset-left));padding-right:max(20px,env(safe-area-inset-right))}
+.pad{padding-left:clamp(20px,3vw,40px);padding-right:clamp(20px,3vw,40px)}
 .preview{background:var(--sun);color:#1a1a1a;text-align:center;font-weight:700;font-size:13px;padding:6px 12px}
-.ann{background:var(--night);color:#EDEFE9;font-size:13px;font-weight:600}
-.ann .wrap{display:flex;justify-content:center;gap:8px 28px;flex-wrap:wrap;padding-block:8px}
+.ann{background:var(--night);color:#EDEFE9;font-size:13px;font-weight:600;display:flex;justify-content:center;gap:8px 28px;flex-wrap:wrap;padding:8px 20px}
 .ann span{display:inline-flex;align-items:center;gap:7px;white-space:nowrap}
 .ann svg{width:15px;height:15px;color:var(--fern)}
 @media (max-width:640px){.ann span:nth-child(n+2){display:none}}
-.top{position:sticky;top:0;z-index:30;background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:saturate(1.4) blur(12px);-webkit-backdrop-filter:saturate(1.4) blur(12px);border-bottom:1px solid var(--line)}
-.top .wrap{display:flex;align-items:center;gap:22px;height:68px}
+
+/* header */
+.top{position:sticky;top:0;z-index:40;height:var(--head);background:color-mix(in srgb,var(--bg) 94%,transparent);backdrop-filter:saturate(1.4) blur(12px);-webkit-backdrop-filter:saturate(1.4) blur(12px);border-bottom:1px solid var(--line);display:flex;align-items:center;gap:22px}
 .brand{display:flex;align-items:center;gap:9px;text-decoration:none;flex:none}
 .brand svg{width:34px;height:34px}
 .brand b{font-family:var(--display);font-weight:800;font-size:24px;letter-spacing:-.02em}
 .nav{display:flex;gap:4px}
-.nav a{text-decoration:none;font-weight:700;font-size:15px;padding:8px 12px;border-radius:999px}
+.nav a{text-decoration:none;font-weight:700;font-size:15px;padding:8px 12px;border-radius:999px;white-space:nowrap}
 .nav a:hover{background:var(--sand)}
 .spacer{flex:1}
-.search{position:relative;width:min(340px,30vw)}
+.search{position:relative;width:min(380px,32vw)}
 .search svg{position:absolute;left:13px;top:50%;width:17px;height:17px;transform:translateY(-50%);color:var(--muted);pointer-events:none}
 .search input{width:100%;height:42px;border-radius:999px;border:1.5px solid var(--line);background:var(--paper);padding:0 38px 0 40px;font:inherit;font-size:15px;color:var(--ink)}
 .search input:focus{outline:none;border-color:var(--fern);box-shadow:0 0 0 4px var(--fern-soft)}
@@ -67,25 +67,75 @@ button{font:inherit;color:inherit}
 .icons a{display:grid;place-items:center;width:40px;height:40px;border-radius:999px;text-decoration:none}
 .icons a:hover{background:var(--sand)}
 .icons svg{width:20px;height:20px}
-.icons a.amz{display:inline-flex;width:auto;gap:7px;padding:0 15px 0 12px;background:var(--ink);color:var(--bg);font-weight:800;font-size:14px;margin-left:4px}
+.icons a.amz{display:inline-flex;white-space:nowrap;width:auto;gap:7px;padding:0 15px 0 12px;background:var(--ink);color:var(--bg);font-weight:800;font-size:14px;margin-left:4px}
 .icons a.amz:hover{background:var(--pop);color:#fff}
 .icons a.amz svg{width:18px;height:18px}
-@media (max-width:1060px){.nav{display:none}}
-@media (max-width:760px){
-  .top .wrap{flex-wrap:wrap;height:auto;padding-block:10px;gap:10px}
+@media (max-width:1380px){.nav{display:none}}
+@media (max-width:900px){
+  :root{--head:116px}
+  .top{flex-wrap:wrap;height:auto;min-height:var(--head);padding-block:10px;gap:10px;align-content:center}
   .search{order:3;width:100%}
   .icons a.amz span{display:none}.icons a.amz{width:40px;padding:0;margin:0}
 }
+
+/* layout with frozen left panel */
+.layout{display:grid;grid-template-columns:var(--side) minmax(0,1fr);align-items:start}
+.side{position:sticky;top:var(--head);height:calc(100vh - var(--head));overflow-y:auto;border-right:1px solid var(--line);background:var(--bg);padding:22px 18px 28px 22px;scrollbar-width:thin;overscroll-behavior:contain}
+.side h2{font-family:var(--display);font-weight:800;font-size:22px;letter-spacing:-.02em;margin:0}
+.sidehead{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:6px}
+.linkbtn{border:0;background:none;padding:4px 0;font-weight:800;font-size:13.5px;cursor:pointer;text-decoration:underline;text-decoration-color:var(--fern);text-decoration-thickness:2px;text-underline-offset:3px}
+.sidesub{color:var(--muted);font-size:13.5px;margin:0 0 10px}
+details.grp{border-top:1px solid var(--line);padding:12px 0}
+details.grp summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-weight:800;font-size:15px}
+details.grp summary::-webkit-details-marker{display:none}
+details.grp summary::after{content:"";width:9px;height:9px;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:rotate(45deg);margin:-4px 4px 0 0;transition:transform .2s}
+details.grp[open] summary::after{transform:rotate(-135deg);margin-top:4px}
+details.grp summary .sel{margin-left:auto;margin-right:12px;font-size:12px;font-weight:800;background:var(--fern);color:#fff;border-radius:99px;padding:1px 8px}
+.opts{display:grid;gap:2px;margin-top:10px}
+.opt{display:flex;align-items:center;gap:10px;padding:6px 6px;border-radius:10px;cursor:pointer;font-size:15px;font-weight:600}
+.opt:hover{background:var(--sand)}
+.opt input{appearance:none;-webkit-appearance:none;width:20px;height:20px;border:2px solid var(--line);border-radius:6px;margin:0;display:grid;place-items:center;flex:none;background:var(--paper);cursor:pointer}
+.opt input:checked{background:var(--ink);border-color:var(--ink)}
+.opt input:checked::after{content:"";width:5px;height:10px;border:solid var(--bg);border-width:0 2px 2px 0;transform:rotate(45deg) translate(-1px,-1px)}
+.opt .n{margin-left:auto;color:var(--muted);font-size:13px;font-weight:700}
+.kws{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.kw{border:1.5px solid var(--line);background:var(--paper);border-radius:999px;padding:5px 11px;font-size:13.5px;font-weight:700;cursor:pointer}
+.kw:hover{border-color:var(--ink)}
+.kw[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:var(--bg)}
+.kw .n{opacity:.55;margin-left:4px;font-weight:600}
+.more{margin-top:6px}
+.sidecard{margin-top:18px;border-radius:16px;background:var(--sand);padding:14px;font-size:14px}
+.sidecard b{display:block;margin-bottom:4px}
+.sidecard a{font-weight:800}
+.drawerbar{display:none}
+
+/* mobile: panel becomes drawer */
+.fbtn{display:none;align-items:center;gap:8px;border:1.5px solid var(--ink);background:var(--paper);border-radius:999px;padding:9px 16px;font-weight:800;font-size:14px;cursor:pointer}
+.fbtn svg{width:17px;height:17px}
+.fbtn .sel{background:var(--fern);color:#fff;border-radius:99px;padding:0 7px;font-size:12px}
+.scrim{position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:60}
+@media (max-width:900px){
+  .layout{grid-template-columns:minmax(0,1fr)}
+  .side{position:fixed;z-index:70;left:0;top:0;bottom:0;height:auto;width:min(360px,88vw);transform:translateX(-102%);transition:transform .25s ease;border-right:0;box-shadow:var(--shadow);padding-bottom:90px}
+  .side.open{transform:none}
+  .drawerbar{display:flex;position:fixed;z-index:71;left:0;bottom:0;width:min(360px,88vw);padding:12px 18px calc(12px + env(safe-area-inset-bottom));background:var(--paper);border-top:1px solid var(--line);transform:translateX(-102%);transition:transform .25s ease}
+  .drawerbar.open{transform:none}
+  .drawerbar .btn{flex:1}
+  .fbtn{display:inline-flex}
+}
+
+/* content */
+main{min-width:0}
 .hero{background:var(--sand);overflow:hidden}
-.hero .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:clamp(24px,4vw,64px);align-items:center;min-height:min(640px,calc(100vh - 110px));padding-block:clamp(32px,5vw,64px)}
+.hero .in{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:clamp(24px,3.5vw,56px);align-items:center;min-height:min(600px,calc(100vh - 110px));padding-block:clamp(32px,4.5vw,60px)}
 .eyebrow{display:inline-flex;align-items:center;gap:8px;font-weight:800;font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--fern-dark);margin-bottom:18px}
 .eyebrow i{width:8px;height:8px;border-radius:99px;background:var(--fern);box-shadow:0 0 0 4px color-mix(in srgb,var(--fern) 25%,transparent)}
-.hero h1{font-family:var(--display);font-weight:800;font-size:clamp(40px,6vw,84px);line-height:.95;letter-spacing:-.04em;margin:0 0 20px;text-wrap:balance}
+.hero h1{font-family:var(--display);font-weight:800;font-size:clamp(38px,5.2vw,78px);line-height:.95;letter-spacing:-.04em;margin:0 0 20px;text-wrap:balance}
 .hero h1 .hl{position:relative;white-space:nowrap;z-index:0}
 .hero h1 .hl::after{content:"";position:absolute;left:-.05em;right:-.05em;bottom:.07em;height:.3em;background:var(--sun);z-index:-1;border-radius:.1em;transform:rotate(-1.2deg)}
 :root[data-theme="dark"] .hero h1 .hl::after{opacity:.5}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .hero h1 .hl::after{opacity:.5}}
-.hero p.lead{font-size:clamp(17px,1.5vw,20px);color:var(--muted);margin:0 0 28px;max-width:44ch}
+.hero p.lead{font-size:clamp(17px,1.4vw,19px);color:var(--muted);margin:0 0 28px;max-width:44ch}
 .cta{display:flex;gap:10px;flex-wrap:wrap}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;text-decoration:none;font-weight:800;font-size:15px;border-radius:999px;padding:14px 22px;border:1.5px solid var(--ink);background:transparent;cursor:pointer;transition:transform .15s,background .15s,color .15s,border-color .15s}
 .btn:hover{transform:translateY(-1px);background:var(--ink);color:var(--bg)}
@@ -95,7 +145,7 @@ button{font:inherit;color:inherit}
 .trust{display:flex;gap:10px 22px;flex-wrap:wrap;margin-top:28px;font-size:14px;font-weight:700;color:var(--muted)}
 .trust span{display:inline-flex;gap:7px;align-items:center}
 .trust svg{width:17px;height:17px;color:var(--fern)}
-.collage{position:relative;height:100%;min-height:440px}
+.collage{position:relative;height:100%;min-height:420px}
 .collage figure{position:absolute;margin:0;border-radius:24px;overflow:hidden;background:var(--line);box-shadow:var(--shadow)}
 .collage figure img{width:100%;height:100%;object-fit:cover;object-position:50% 25%}
 .collage .c1{left:0;top:0;width:62%;height:100%}
@@ -104,18 +154,14 @@ button{font:inherit;color:inherit}
 .collage a{display:block;width:100%;height:100%}
 .collage .tag{position:absolute;left:14px;bottom:14px;background:color-mix(in srgb,var(--paper) 92%,transparent);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);color:var(--ink);border-radius:999px;padding:7px 12px;font-weight:800;font-size:13px;max-width:calc(100% - 28px);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .sticker{position:absolute;z-index:3;top:-12px;left:52%;background:var(--sun);color:#1a1a1a;font-family:var(--display);font-weight:800;font-size:15px;line-height:1;text-align:center;width:86px;height:86px;border-radius:999px;display:grid;place-items:center;transform:rotate(12deg);box-shadow:var(--shadow)}
-@media (max-width:860px){
-  .hero .wrap{grid-template-columns:minmax(0,1fr);min-height:0}
-  .collage{min-height:0;height:auto;aspect-ratio:1/1;order:-1}
-  .sticker{left:auto;right:30%;top:-8px;width:72px;height:72px;font-size:13px}
-}
-section.block{padding-block:clamp(44px,6vw,80px) 0}
+@media (max-width:1100px){.hero .in{grid-template-columns:minmax(0,1fr);min-height:0}.collage{min-height:0;height:auto;aspect-ratio:4/3;order:-1}.sticker{left:auto;right:30%;top:-8px;width:72px;height:72px;font-size:13px}}
+section.block{padding-block:clamp(44px,5vw,72px) 0}
 .head{display:flex;align-items:end;justify-content:space-between;gap:12px;margin-bottom:20px}
-.head h2{font-family:var(--display);font-weight:800;font-size:clamp(28px,3.4vw,44px);letter-spacing:-.03em;line-height:1;margin:0}
+.head h2{font-family:var(--display);font-weight:800;font-size:clamp(28px,3vw,42px);letter-spacing:-.03em;line-height:1;margin:0}
 .head p{margin:8px 0 0;color:var(--muted);font-size:16px}
-.more{font-weight:800;font-size:15px;text-decoration:none;white-space:nowrap;display:inline-flex;gap:6px;align-items:center;border-bottom:2px solid var(--fern);padding-bottom:2px}
-.more svg{width:15px;height:15px}
-.row{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(240px,1fr);gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:6px;scrollbar-width:thin}
+.alink{font-weight:800;font-size:15px;text-decoration:none;white-space:nowrap;display:inline-flex;gap:6px;align-items:center;border-bottom:2px solid var(--fern);padding-bottom:2px}
+.alink svg{width:15px;height:15px}
+.row{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(230px,1fr);gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:6px;scrollbar-width:thin}
 .row>*{scroll-snap-align:start}
 @media (max-width:640px){.row{grid-auto-columns:72%;margin-inline:-20px;padding-inline:20px;scroll-padding-inline:20px}}
 .card{display:flex;flex-direction:column;min-width:0}
@@ -123,7 +169,6 @@ section.block{padding-block:clamp(44px,6vw,80px) 0}
 .card .ph img{width:100%;height:100%;object-fit:cover;object-position:50% 28%;transition:transform .5s ease}
 .card:hover .ph img{transform:scale(1.04)}
 .badge{position:absolute;top:12px;left:12px;background:var(--sun);color:#1a1a1a;font-size:11.5px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;border-radius:999px;padding:4px 10px}
-.badge.h{left:auto;right:12px;background:var(--paper);color:var(--ink)}
 .quick{position:absolute;left:12px;right:12px;bottom:12px;opacity:0;transform:translateY(8px);transition:.2s;display:flex;justify-content:center;background:var(--paper);color:var(--ink);font-weight:800;font-size:14px;border-radius:999px;padding:11px}
 .card:hover .quick{opacity:1;transform:none}
 @media (hover:none){.quick{display:none}}
@@ -135,35 +180,14 @@ section.block{padding-block:clamp(44px,6vw,80px) 0}
 .card .btn{padding:10px 16px;font-size:14px}
 .mini{font-weight:800;text-decoration:underline;text-decoration-color:var(--fern);text-decoration-thickness:2px;text-underline-offset:3px}
 mark{background:var(--sun);color:#1a1a1a;border-radius:3px;padding:0 1px}
-.hobbies{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px}
-.hobby{position:relative;display:block;border:0;padding:0;border-radius:20px;overflow:hidden;aspect-ratio:3/4;cursor:pointer;background:var(--sand);text-align:left}
-.hobby img{width:100%;height:100%;object-fit:cover;object-position:50% 25%;transition:transform .5s ease}
-.hobby:hover img{transform:scale(1.05)}
-.hobby::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,rgba(0,0,0,.65))}
-.hobby .lbl{position:absolute;z-index:1;left:16px;right:16px;bottom:16px;color:#fff;display:flex;align-items:end;justify-content:space-between;gap:8px}
-.hobby b{font-family:var(--display);font-weight:800;font-size:26px;letter-spacing:-.02em;line-height:1}
-.hobby small{display:block;font-size:13px;font-weight:700;opacity:.85;margin-top:4px}
-.hobby .arr{width:38px;height:38px;border-radius:99px;background:#fff;color:#161716;display:grid;place-items:center;flex:none;transition:transform .15s}
-.hobby:hover .arr{transform:translateX(3px)}
-.hobby .arr svg{width:16px;height:16px}
-@media (max-width:560px){.hobbies{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.hobby b{font-size:20px}.hobby .arr{display:none}}
-.toolbar{position:sticky;top:68px;z-index:10;background:var(--bg);padding-block:12px;display:flex;align-items:center;gap:10px;flex-wrap:wrap;border-bottom:1px solid transparent}
-.toolbar.stuck{border-bottom-color:var(--line)}
-.chips{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;min-width:0;flex:1 1 auto}
-.chips::-webkit-scrollbar{display:none}
-.chip{flex:none;border:1.5px solid var(--line);background:var(--paper);border-radius:999px;padding:8px 15px;font-size:14px;font-weight:800;cursor:pointer}
-.chip:hover{border-color:var(--ink)}
-.chip[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:var(--bg)}
-.chip .n{opacity:.55;font-weight:700;margin-left:4px}
-.right{display:flex;gap:8px;align-items:center;flex:none}
-.seg{display:inline-flex;background:var(--sand);border-radius:999px;padding:3px}
-.seg button{border:0;background:none;border-radius:999px;padding:7px 13px;font-size:13.5px;font-weight:800;color:var(--muted);cursor:pointer}
-.seg button[aria-pressed="true"]{background:var(--paper);color:var(--ink);box-shadow:0 1px 3px rgba(0,0,0,.12)}
-select.sort{height:38px;border-radius:999px;border:0;background:var(--sand);padding:0 32px 0 14px;font:inherit;font-size:13.5px;font-weight:800;color:var(--ink);appearance:none;-webkit-appearance:none;background-image:linear-gradient(45deg,transparent 50%,currentColor 50%),linear-gradient(135deg,currentColor 50%,transparent 50%);background-position:calc(100% - 17px) 16px,calc(100% - 12px) 16px;background-size:5px 5px;background-repeat:no-repeat;cursor:pointer}
-.count{font-size:14px;color:var(--muted);font-weight:700;margin:6px 0 16px}
+.toolbar{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:16px}
+.count{font-size:15px;color:var(--muted);font-weight:700;margin-right:auto}
 .count b{color:var(--ink)}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:28px 20px}
-@media (max-width:760px){.toolbar{top:117px;margin-inline:-20px;padding-inline:20px}.chips{flex:1 1 100%;margin-inline:-20px;padding-inline:20px}.right{width:100%;justify-content:space-between}}
+.pills{display:flex;gap:6px;flex-wrap:wrap;width:100%}
+.pill{display:inline-flex;align-items:center;gap:6px;border:0;background:var(--ink);color:var(--bg);border-radius:999px;padding:6px 10px 6px 13px;font-size:13.5px;font-weight:800;cursor:pointer}
+.pill span{opacity:.7;font-size:15px;line-height:1}
+select.sort{height:40px;border-radius:999px;border:0;background:var(--sand);padding:0 34px 0 16px;font:inherit;font-size:14px;font-weight:800;color:var(--ink);appearance:none;-webkit-appearance:none;background-image:linear-gradient(45deg,transparent 50%,currentColor 50%),linear-gradient(135deg,currentColor 50%,transparent 50%);background-position:calc(100% - 18px) 17px,calc(100% - 13px) 17px;background-size:5px 5px;background-repeat:no-repeat;cursor:pointer}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:28px 20px}
 @media (max-width:560px){.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:20px 12px}.card h3{font-size:14.5px}.card .btn{align-self:stretch;padding:9px 10px;font-size:13px}}
 .empty,.soon{background:var(--sand);border-radius:24px;padding:48px 20px;text-align:center}
 .empty h3,.soon h2{font-family:var(--display);font-weight:800;font-size:28px;margin:0 0 6px;letter-spacing:-.02em}
@@ -173,26 +197,27 @@ select.sort{height:38px;border-radius:999px;border:0;background:var(--sand);padd
 .step .num{width:44px;height:44px;border-radius:14px;background:var(--fern-soft);color:var(--fern-dark);display:grid;place-items:center;font-family:var(--display);font-weight:800;font-size:20px;margin-bottom:14px}
 .step h3{margin:0 0 6px;font-size:19px;font-weight:800;letter-spacing:-.01em}
 .step p{margin:0;color:var(--muted)}
-@media (max-width:760px){.how{grid-template-columns:minmax(0,1fr)}}
-.story{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(24px,5vw,72px);align-items:center;background:#0B5E36;color:#F1F8F3;border-radius:28px;padding:clamp(24px,4vw,56px);overflow:hidden}
-.story h2{font-family:var(--display);font-weight:800;font-size:clamp(28px,3.4vw,46px);letter-spacing:-.03em;line-height:1.02;margin:0 0 16px}
+@media (max-width:1000px){.how{grid-template-columns:minmax(0,1fr)}}
+.story{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(24px,4vw,64px);align-items:center;background:#0B5E36;color:#F1F8F3;border-radius:28px;padding:clamp(24px,4vw,52px);overflow:hidden}
+.story h2{font-family:var(--display);font-weight:800;font-size:clamp(28px,3vw,44px);letter-spacing:-.03em;line-height:1.02;margin:0 0 16px}
 .story p{margin:0 0 14px;color:#CFE6D8;font-size:17px}
 .story .pics{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 .story .pics img{border-radius:18px;aspect-ratio:4/5;object-fit:cover;object-position:50% 25%;width:100%}
 .story .pics img:nth-child(2){margin-top:40px}
 .story .btn{border-color:#fff;color:#fff}
 .story .btn:hover{background:#fff;color:#0B5E36}
-@media (max-width:860px){.story{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:1000px){.story{grid-template-columns:minmax(0,1fr)}}
 .sister{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:16px 24px;align-items:center;background:#FFF3C4;color:#1d1d1b;border-radius:24px;padding:clamp(18px,3vw,30px)}
 .sister .ic{width:64px;height:64px;border-radius:18px;background:#fff;display:grid;place-items:center;box-shadow:var(--shadow)}
 .sister .ic svg{width:34px;height:34px;color:#FF5B36}
 .sister small{font-size:12px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;opacity:.65}
-.sister h2{font-family:var(--display);font-weight:800;font-size:clamp(22px,2.6vw,30px);letter-spacing:-.02em;line-height:1.1;margin:2px 0 4px}
+.sister h2{font-family:var(--display);font-weight:800;font-size:clamp(22px,2.4vw,30px);letter-spacing:-.02em;line-height:1.1;margin:2px 0 4px}
 .sister p{margin:0;opacity:.75;font-weight:500}
 .sister .btn{border-color:#1d1d1b;color:#1d1d1b}
 .sister .btn:hover{background:#1d1d1b;color:#fff}
-@media (max-width:640px){.sister{grid-template-columns:auto minmax(0,1fr)}.sister .btn{grid-column:1/-1}}
-footer{margin-top:clamp(56px,7vw,96px);background:var(--night);color:#C9CEC6}
+@media (max-width:700px){.sister{grid-template-columns:auto minmax(0,1fr)}.sister .btn{grid-column:1/-1}}
+body.filtering .promo{display:none}
+footer{margin-top:clamp(56px,6vw,90px);background:var(--night);color:#C9CEC6;position:relative;z-index:1}
 footer .cols{display:grid;grid-template-columns:1.4fr repeat(3,1fr);gap:28px;padding-block:52px 34px}
 footer .brand b{color:#fff}
 footer p{margin:12px 0 0;max-width:36ch;font-size:14.5px}
@@ -200,9 +225,6 @@ footer h4{margin:0 0 12px;color:#fff;font-size:14px;letter-spacing:.08em;text-tr
 footer ul{list-style:none;margin:0;padding:0;display:grid;gap:8px;font-size:14.5px}
 footer a{text-decoration:none}
 footer a:hover{color:#fff;text-decoration:underline}
-footer .soc{display:flex;gap:8px;margin-top:16px}
-footer .soc a{width:40px;height:40px;border-radius:99px;border:1px solid #3A463E;display:grid;place-items:center}
-footer .soc svg{width:18px;height:18px}
 footer .legal{border-top:1px solid #2A352E;padding-block:18px 28px;font-size:13px;display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between}
 @media (max-width:760px){footer .cols{grid-template-columns:1fr 1fr}footer .cols>div:first-child{grid-column:1/-1}}
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{transition:none!important;scroll-behavior:auto!important}}
@@ -210,225 +232,222 @@ footer .legal{border-top:1px solid #2A352E;padding-block:18px 28px;font-size:13p
 </head>
 <body>
 <div class="preview" id="previewBar" hidden>PREVIEW – sample data, not live products</div>
-<div class="ann"><div class="wrap">
+<div class="ann">
   <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7"/><circle cx="7" cy="17.5" r="1.8"/><circle cx="17" cy="17.5" r="1.8"/></svg>Printed &amp; delivered by Amazon</span>
   <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/></svg>Returns handled by Amazon</span>
   <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.5 5.5L20 9l-4 4 1 6-5-3-5 3 1-6-4-4 5.5-.5z"/></svg>New designs added regularly</span>
-</div></div>
+</div>
 
-<header class="top">
-  <div class="wrap">
-    <a class="brand" href="./" aria-label="Snarkfern home">
-      <svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="18" fill="#14B866"/><path d="M32 52V14M32 20l-9-6M32 28l-12-7M32 36l-13-6M32 44l-11-4M32 20l9-6M32 28l12-7M32 36l13-6M32 44l11-4" stroke="#fff" stroke-width="4" stroke-linecap="round" fill="none"/></svg>
-      <b>Snarkfern</b>
-    </a>
-    <nav class="nav" aria-label="Main">
-      <a href="#new">New in</a>
-      <a href="#hobbies">Shop by hobby</a>
-      <a href="#shop">All designs</a>
-      <a href="#story">About us</a>
-    </nav>
-    <div class="spacer"></div>
-    <label class="search">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
-      <input id="q" type="search" placeholder="Search hiking, dogs, ski…" autocomplete="off" aria-label="Search designs">
-      <button class="clear" id="clear" type="button" aria-label="Clear search" hidden><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
-    </label>
-    <div class="icons">
-      <a href="https://www.instagram.com/snarkfern/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a>
-      <a href="https://www.pinterest.com/snarkfern/" target="_blank" rel="noopener" aria-label="Pinterest"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-3.6 19.3c-.1-.8-.2-2 0-2.9l1.2-5s-.3-.6-.3-1.5c0-1.4.8-2.5 1.8-2.5.9 0 1.3.6 1.3 1.4 0 .9-.6 2.2-.8 3.4-.3 1 .5 1.8 1.5 1.8 1.8 0 3.1-1.9 3.1-4.6 0-2.4-1.7-4.1-4.2-4.1-2.9 0-4.5 2.1-4.5 4.4 0 .9.3 1.8.8 2.3l.1.4-.3 1.1c0 .2-.2.2-.4.1-1.3-.6-2.1-2.5-2.1-4 0-3.3 2.4-6.3 6.9-6.3 3.6 0 6.4 2.6 6.4 6 0 3.6-2.3 6.5-5.4 6.5-1.1 0-2.1-.6-2.4-1.2l-.7 2.5c-.2.9-.9 2.1-1.3 2.8A10 10 0 1 0 12 2z"/></svg></a>
-      <a class="amz" href="https://www.amazon.com/s?k=Snarkfern&amp;rh=p_89%3ASnarkfern" target="_blank" rel="noopener" aria-label="All Snarkfern designs on Amazon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M5 8h14l-1.2 11.2a2 2 0 0 1-2 1.8H8.2a2 2 0 0 1-2-1.8z"/><path d="M9 10V7a3 3 0 0 1 6 0v3"/></svg><span>Shop on Amazon</span></a>
-    </div>
+<header class="top pad">
+  <a class="brand" href="./" aria-label="Snarkfern home">
+    <svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="18" fill="#14B866"/><path d="M32 52V14M32 20l-9-6M32 28l-12-7M32 36l-13-6M32 44l-11-4M32 20l9-6M32 28l12-7M32 36l13-6M32 44l11-4" stroke="#fff" stroke-width="4" stroke-linecap="round" fill="none"/></svg>
+    <b>Snarkfern</b>
+  </a>
+  <nav class="nav" aria-label="Main">
+    <a href="#new">New in</a>
+    <a href="#shop">All designs</a>
+    <a href="#how">How to order</a>
+    <a href="#story">About us</a>
+  </nav>
+  <div class="spacer"></div>
+  <label class="search">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+    <input id="q" type="search" placeholder="Search hiking, dogs, ski…" autocomplete="off" aria-label="Search designs">
+    <button class="clear" id="clear" type="button" aria-label="Clear search" hidden><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+  </label>
+  <div class="icons">
+    <a href="https://www.instagram.com/snarkfern/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a>
+    <a href="https://www.pinterest.com/snarkfern/" target="_blank" rel="noopener" aria-label="Pinterest"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-3.6 19.3c-.1-.8-.2-2 0-2.9l1.2-5s-.3-.6-.3-1.5c0-1.4.8-2.5 1.8-2.5.9 0 1.3.6 1.3 1.4 0 .9-.6 2.2-.8 3.4-.3 1 .5 1.8 1.5 1.8 1.8 0 3.1-1.9 3.1-4.6 0-2.4-1.7-4.1-4.2-4.1-2.9 0-4.5 2.1-4.5 4.4 0 .9.3 1.8.8 2.3l.1.4-.3 1.1c0 .2-.2.2-.4.1-1.3-.6-2.1-2.5-2.1-4 0-3.3 2.4-6.3 6.9-6.3 3.6 0 6.4 2.6 6.4 6 0 3.6-2.3 6.5-5.4 6.5-1.1 0-2.1-.6-2.4-1.2l-.7 2.5c-.2.9-.9 2.1-1.3 2.8A10 10 0 1 0 12 2z"/></svg></a>
+    <a class="amz" href="https://www.amazon.com/s?k=Snarkfern&amp;rh=p_89%3ASnarkfern" target="_blank" rel="noopener" aria-label="All Snarkfern designs on Amazon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M5 8h14l-1.2 11.2a2 2 0 0 1-2 1.8H8.2a2 2 0 0 1-2-1.8z"/><path d="M9 10V7a3 3 0 0 1 6 0v3"/></svg><span>Shop on Amazon</span></a>
   </div>
 </header>
 
-<main>
-  <section class="hero">
-    <div class="wrap">
-      <div>
-        <span class="eyebrow"><i></i>Fall &amp; winter drop</span>
-        <h1>Shirts that <span class="hl">get your hobby.</span></h1>
-        <p class="lead">Witty, slightly sarcastic designs for hikers, skiers, puzzlers, dog people and everyone who has a thing. Pick your joke, Amazon handles the rest.</p>
-        <div class="cta">
-          <a class="btn pop" href="#new">Shop new designs <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-          <a class="btn" href="#hobbies">Browse by hobby</a>
+<div class="layout">
+  <aside class="side" id="side" aria-label="Filter designs">
+    <div class="sidehead"><h2>Filter</h2><button class="linkbtn" id="clearAll" type="button" hidden>Clear all</button></div>
+    <p class="sidesub" id="sideSub">Find your thing.</p>
+    <details class="grp" open><summary>Hobby &amp; interest <span class="sel" id="selT" hidden></span></summary><div class="opts" id="optT"></div></details>
+    <details class="grp" open><summary>Season &amp; occasion <span class="sel" id="selO" hidden></span></summary><div class="opts" id="optO"></div></details>
+    <details class="grp" open><summary>Popular searches <span class="sel" id="selK" hidden></span></summary><div class="kws" id="optK"></div><button class="linkbtn more" id="moreK" type="button" hidden>Show more</button></details>
+    <div class="sidecard"><b>Every design on Amazon</b>Prices, sizes and shirt colors are on the Amazon page. <a href="https://www.amazon.com/s?k=Snarkfern&amp;rh=p_89%3ASnarkfern" target="_blank" rel="noopener">Browse all →</a></div>
+  </aside>
+  <div class="drawerbar" id="drawerBar"><button class="btn pop" id="showRes" type="button">Show designs</button></div>
+  <div class="scrim" id="scrim" hidden></div>
+
+  <main>
+    <section class="hero promo">
+      <div class="in pad">
+        <div>
+          <span class="eyebrow"><i></i>Fall &amp; winter drop</span>
+          <h1>Shirts that <span class="hl">get your hobby.</span></h1>
+          <p class="lead">Witty, slightly sarcastic designs for hikers, skiers, puzzlers, dog people and everyone who has a thing. Pick your joke, Amazon handles the rest.</p>
+          <div class="cta">
+            <a class="btn pop" href="#new">Shop new designs <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+            <a class="btn" href="#shop">See all designs</a>
+          </div>
+          <div class="trust">
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 7 9 18l-5-5"/></svg>Original designs</span>
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 7 9 18l-5-5"/></svg>Many shirt colors &amp; sizes</span>
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 7 9 18l-5-5"/></svg>Secure checkout on Amazon</span>
+          </div>
         </div>
-        <div class="trust">
-          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 7 9 18l-5-5"/></svg>Original designs</span>
-          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 7 9 18l-5-5"/></svg>T-shirts &amp; hoodies</span>
-          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 7 9 18l-5-5"/></svg>Secure checkout on Amazon</span>
+        <div class="collage" id="collage" aria-label="Newest designs"></div>
+      </div>
+    </section>
+
+    <section class="block pad promo" id="new" hidden>
+      <div class="head"><div><h2>New in</h2><p>Fresh jokes, just printed.</p></div><a class="alink" href="#shop">See all <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+      <div class="row" id="newRow"></div>
+    </section>
+
+    <section class="block pad" id="shop">
+      <div class="head"><div><h2 id="shopTitle">All designs</h2></div></div>
+      <div class="toolbar" id="toolbar" hidden>
+        <span class="count" id="count"></span>
+        <button class="fbtn" id="openF" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round"><path d="M4 6h16M7 12h10M10 18h4"/></svg>Filter <span class="sel" id="fN" hidden></span></button>
+        <select class="sort" id="sort" aria-label="Sort"><option value="new">Newest</option><option value="az">A–Z</option></select>
+        <div class="pills" id="pills"></div>
+      </div>
+      <div class="grid" id="grid"></div>
+      <div class="empty" id="empty" hidden><h3>Nothing here… yet</h3><p>No design matches your filters. Try another word or clear the filters.</p><button class="btn" id="reset" type="button">Clear filters</button></div>
+      <div class="soon" id="soon" hidden><h2>First designs dropping soon</h2><p>We are printing the first batch right now. Follow us on Instagram or Pinterest to see them first.</p></div>
+    </section>
+
+    <section class="block pad promo" id="how">
+      <div class="head"><div><h2>How ordering works</h2><p>No new account, no risk – it all runs through Amazon.</p></div></div>
+      <div class="how">
+        <div class="step"><div class="num">1</div><h3>Pick a design</h3><p>Filter by hobby or season, or just search for your thing. Every design here is our own original work.</p></div>
+        <div class="step"><div class="num">2</div><h3>Choose size &amp; color on Amazon</h3><p>The button takes you straight to the shirt on Amazon, where you pick the fit, size and color.</p></div>
+        <div class="step"><div class="num">3</div><h3>Amazon prints &amp; delivers</h3><p>Each shirt is printed on demand and shipped by Amazon. Payment, delivery and returns run through your Amazon account.</p></div>
+      </div>
+    </section>
+
+    <section class="block pad promo" id="story">
+      <div class="story">
+        <div>
+          <h2>A tiny studio with a big soft spot for hobbies.</h2>
+          <p>Snarkfern is a small independent design studio. We draw jokes for people who plan their weekends around a trail, a slope, a puzzle or a very short dog.</p>
+          <p>Every design is original and checked before it goes live. We don't keep stock – each shirt is printed when you order it, so nothing goes to waste.</p>
+          <div class="cta"><a class="btn" href="https://www.instagram.com/snarkfern/" target="_blank" rel="noopener">Say hi on Instagram</a></div>
         </div>
+        <div class="pics" id="storyPics"></div>
       </div>
-      <div class="collage" id="collage" aria-label="Newest designs"></div>
-    </div>
-  </section>
+    </section>
 
-  <section class="block wrap" id="new" hidden>
-    <div class="head"><div><h2>New in</h2><p>Fresh jokes, just printed.</p></div><a class="more" href="#shop">See all <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
-    <div class="row" id="newRow"></div>
-  </section>
-
-  <section class="block wrap" id="hobbies" hidden>
-    <div class="head"><div><h2>Shop by hobby</h2><p>Pick your thing – we did the jokes.</p></div></div>
-    <div class="hobbies" id="hobbyGrid"></div>
-  </section>
-
-  <section class="block wrap" id="how">
-    <div class="head"><div><h2>How ordering works</h2><p>No new account, no risk – it all runs through Amazon.</p></div></div>
-    <div class="how">
-      <div class="step"><div class="num">1</div><h3>Pick a design</h3><p>Browse by hobby or search for your thing. Every design here is our own original work.</p></div>
-      <div class="step"><div class="num">2</div><h3>Choose size &amp; color on Amazon</h3><p>The button takes you straight to the product on Amazon, where you pick the fit, size and shirt color.</p></div>
-      <div class="step"><div class="num">3</div><h3>Amazon prints &amp; delivers</h3><p>Each shirt is printed on demand and shipped by Amazon. Payment, delivery and returns run through your Amazon account.</p></div>
-    </div>
-  </section>
-
-  <section class="block wrap" id="shop">
-    <div class="head"><div><h2 id="shopTitle">All designs</h2></div></div>
-    <div class="toolbar" id="toolbar" hidden>
-      <div class="chips" id="chips" role="toolbar" aria-label="Filter by hobby"></div>
-      <div class="right">
-        <div class="seg" role="group" aria-label="Product type" id="seg">
-          <button type="button" data-t="all" aria-pressed="true">All</button>
-          <button type="button" data-t="tee" aria-pressed="false">T-shirts</button>
-          <button type="button" data-t="hoodie" aria-pressed="false">Hoodies</button>
-        </div>
-        <select class="sort" id="sort" aria-label="Sort">
-          <option value="new">Newest</option>
-          <option value="az">A–Z</option>
-        </select>
+    <section class="block pad promo" aria-label="Sister shop">
+      <div class="sister">
+        <div class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v15H6.5A2.5 2.5 0 0 0 4 20.5z"/><path d="M4 20.5A2.5 2.5 0 0 0 6.5 23H20v-5"/><path d="M9 8h7M9 12h5"/></svg></div>
+        <div><small>Our sister shop</small><h2>Love puzzles &amp; cozy hobbies? Meet Zestfern Books.</h2><p>Puzzle books, coloring books and journals from the same little studio.</p></div>
+        <a class="btn" href="https://zestfern.github.io/" target="_blank" rel="noopener">Visit Zestfern Books</a>
       </div>
-    </div>
-    <p class="count" id="count" hidden></p>
-    <div class="grid" id="grid"></div>
-    <div class="empty" id="empty" hidden>
-      <h3>Nothing here… yet</h3>
-      <p>No design matches your search. Try another word or clear the filters.</p>
-      <button class="btn" id="reset" type="button">Clear filters</button>
-    </div>
-    <div class="soon" id="soon" hidden>
-      <h2>First designs dropping soon</h2>
-      <p>We are printing the first batch right now. Follow us on Instagram or Pinterest to see them first.</p>
-    </div>
-  </section>
-
-  <section class="block wrap" id="story">
-    <div class="story">
-      <div>
-        <h2>A tiny studio with a big soft spot for hobbies.</h2>
-        <p>Snarkfern is a small independent design studio. We draw jokes for people who plan their weekends around a trail, a slope, a puzzle or a very short dog.</p>
-        <p>Every design is original and checked before it goes live. We don't keep stock – each shirt is printed when you order it, so nothing goes to waste.</p>
-        <div class="cta"><a class="btn" href="https://www.instagram.com/snarkfern/" target="_blank" rel="noopener">Say hi on Instagram</a></div>
-      </div>
-      <div class="pics" id="storyPics"></div>
-    </div>
-  </section>
-
-  <section class="block wrap" aria-label="Sister shop">
-    <div class="sister">
-      <div class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v15H6.5A2.5 2.5 0 0 0 4 20.5z"/><path d="M4 20.5A2.5 2.5 0 0 0 6.5 23H20v-5"/><path d="M9 8h7M9 12h5"/></svg></div>
-      <div><small>Our sister shop</small><h2>Love puzzles &amp; cozy hobbies? Meet Zestfern Books.</h2><p>Puzzle books, coloring books and journals from the same little studio.</p></div>
-      <a class="btn" href="https://zestfern.github.io/" target="_blank" rel="noopener">Visit Zestfern Books</a>
-    </div>
-  </section>
-</main>
+    </section>
+  </main>
+</div>
 
 <footer>
-  <div class="wrap cols">
+  <div class="cols pad">
     <div>
       <a class="brand" href="./" aria-label="Snarkfern home"><svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="18" fill="#14B866"/><path d="M32 52V14M32 20l-9-6M32 28l-12-7M32 36l-13-6M32 44l-11-4M32 20l9-6M32 28l12-7M32 36l13-6M32 44l11-4" stroke="#fff" stroke-width="4" stroke-linecap="round" fill="none"/></svg><b>Snarkfern</b></a>
       <p>Funny shirts for people with hobbies. Original designs, printed on demand and delivered by Amazon.</p>
-      <div class="soc">
-        <a href="https://www.instagram.com/snarkfern/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a>
-        <a href="https://www.pinterest.com/snarkfern/" target="_blank" rel="noopener" aria-label="Pinterest"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-3.6 19.3c-.1-.8-.2-2 0-2.9l1.2-5s-.3-.6-.3-1.5c0-1.4.8-2.5 1.8-2.5.9 0 1.3.6 1.3 1.4 0 .9-.6 2.2-.8 3.4-.3 1 .5 1.8 1.5 1.8 1.8 0 3.1-1.9 3.1-4.6 0-2.4-1.7-4.1-4.2-4.1-2.9 0-4.5 2.1-4.5 4.4 0 .9.3 1.8.8 2.3l.1.4-.3 1.1c0 .2-.2.2-.4.1-1.3-.6-2.1-2.5-2.1-4 0-3.3 2.4-6.3 6.9-6.3 3.6 0 6.4 2.6 6.4 6 0 3.6-2.3 6.5-5.4 6.5-1.1 0-2.1-.6-2.4-1.2l-.7 2.5c-.2.9-.9 2.1-1.3 2.8A10 10 0 1 0 12 2z"/></svg></a>
-      </div>
     </div>
-    <div><h4>Shop</h4><ul><li><a href="#new">New in</a></li><li><a href="#hobbies">Shop by hobby</a></li><li><a href="#shop">All designs</a></li><li><a href="https://www.amazon.com/s?k=Snarkfern&amp;rh=p_89%3ASnarkfern" target="_blank" rel="noopener">Snarkfern on Amazon</a></li></ul></div>
+    <div><h4>Shop</h4><ul><li><a href="#new">New in</a></li><li><a href="#shop">All designs</a></li><li><a href="https://www.amazon.com/s?k=Snarkfern&amp;rh=p_89%3ASnarkfern" target="_blank" rel="noopener">Snarkfern on Amazon</a></li></ul></div>
     <div><h4>Help</h4><ul><li><a href="#how">How ordering works</a></li><li><a href="https://www.amazon.com/gp/css/order-history" target="_blank" rel="noopener">Orders &amp; returns (Amazon)</a></li></ul></div>
-    <div><h4>Studio</h4><ul><li><a href="#story">About us</a></li><li><a href="https://www.instagram.com/snarkfern/" target="_blank" rel="noopener">Contact via Instagram</a></li><li><a href="https://zestfern.github.io/" target="_blank" rel="noopener">Zestfern Books (sister shop)</a></li></ul></div>
+    <div><h4>Studio</h4><ul><li><a href="#story">About us</a></li><li><a href="https://www.instagram.com/snarkfern/" target="_blank" rel="noopener">Instagram</a></li><li><a href="https://www.pinterest.com/snarkfern/" target="_blank" rel="noopener">Pinterest</a></li><li><a href="https://zestfern.github.io/" target="_blank" rel="noopener">Zestfern Books (sister shop)</a></li></ul></div>
   </div>
-  <div class="wrap legal"><span>© <span id="yr"></span> Snarkfern. Independent designs.</span><span>Prices, sizes and colors are shown on the Amazon product page. Amazon is a trademark of Amazon.com, Inc.</span></div>
+  <div class="legal pad"><span>© <span id="yr"></span> Snarkfern. Independent designs.</span><span>Prices, sizes and colors are shown on the Amazon product page. Amazon is a trademark of Amazon.com, Inc.</span></div>
 </footer>
 
 <script>
 (function(){
   var $=function(s){return document.querySelector(s);};
   var esc=function(s){return String(s==null?"":s).replace(/[&<>"']/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c];});};
-  var arrow='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>';
   $("#yr").textContent=new Date().getFullYear();
-  var items=[], st={tag:"All",type:"all",sort:"new",q:""};
-  try{var h=decodeURIComponent(location.hash.slice(1));if(h.indexOf("hobby=")===0)st.tag=h.slice(6);}catch(e){}
-  function link(it){var l=it.links||{};return l.amazon||l.redbubble||l.amazon_hoodie||"#shop";}
-  function hasHoodie(it){return !!((it.links||{}).amazon_hoodie)||/hoodie/i.test(it.product||"");}
-  function isTee(it){return !/hoodie/i.test(it.product||"")||!!(it.links||{}).amazon;}
+  var items=[], sel={t:[],o:[],k:[]}, q="", sort="new", kwAll=false;
+  var GROUPS={t:"topics",o:"occasions"};
+
+  function link(it){var l=it.links||{};return l.amazon||l.redbubble||"#shop";}
   function isNew(it){var d=Date.parse(it.date);return !isNaN(d)&&(Date.now()-d)<14*864e5;}
-  function hl(s){s=esc(s);if(!st.q)return s;var q=esc(st.q).replace(/[.*+?^${}()|[\]\\]/g,"\\$&");return s.replace(new RegExp("("+q+")","ig"),"<mark>$1</mark>");}
-  function tagsOf(){var m={},img={};items.forEach(function(it){(it.tags||[]).forEach(function(t){m[t]=(m[t]||0)+1;if(!img[t])img[t]=it.image;});});return Object.keys(m).sort(function(a,b){return m[b]-m[a]||a.localeCompare(b);}).map(function(t){return {t:t,n:m[t],img:img[t]};});}
+  function hl(s){s=esc(s);if(!q)return s;var r=esc(q).replace(/[.*+?^${}()|[\]\\]/g,"\\$&");return s.replace(new RegExp("("+r+")","ig"),"<mark>$1</mark>");}
+  function count(field){var m={};items.forEach(function(it){(it[field]||[]).forEach(function(v){m[v]=(m[v]||0)+1;});});return Object.keys(m).sort(function(a,b){return m[b]-m[a]||a.localeCompare(b);}).map(function(v){return {v:v,n:m[v]};});}
+  function kwCount(){var topics={};items.forEach(function(it){(it.topics||[]).concat(it.occasions||[]).forEach(function(t){topics[t.toLowerCase()]=1;});});var m={};items.forEach(function(it){(it.keywords||[]).forEach(function(k){k=String(k).toLowerCase().trim();if(!k||topics[k])return;m[k]=(m[k]||0)+1;});});return Object.keys(m).sort(function(a,b){return m[b]-m[a]||a.localeCompare(b);}).map(function(v){return {v:v,n:m[v]};});}
+  function active(){return sel.t.length+sel.o.length+sel.k.length;}
+
   function card(it){
     var l=it.links||{};
     var main=l.amazon?'<a class="btn pop" href="'+esc(l.amazon)+'" target="_blank" rel="noopener">Buy on Amazon</a>':(l.redbubble?'<a class="btn pop" href="'+esc(l.redbubble)+'" target="_blank" rel="noopener">Buy on Redbubble</a>':'');
-    var also=[];
-    if(l.amazon_hoodie) also.push('<a class="mini" href="'+esc(l.amazon_hoodie)+'" target="_blank" rel="noopener">Hoodie</a>');
-    if(l.redbubble&&l.amazon) also.push('<a class="mini" href="'+esc(l.redbubble)+'" target="_blank" rel="noopener">Redbubble</a>');
-    var avail=hasHoodie(it)?"T-shirt &amp; hoodie":"T-shirt";
-    return '<article class="card"><a class="ph" href="'+esc(link(it))+'" target="_blank" rel="noopener" tabindex="-1">'+
-      '<img src="'+esc(it.image)+'" alt="'+esc(it.alt||it.title)+'" loading="lazy">'+
-      (isNew(it)?'<span class="badge">New</span>':'')+(hasHoodie(it)?'<span class="badge h">+ Hoodie</span>':'')+
-      '<span class="quick">See sizes &amp; colors →</span></a>'+
-      '<div class="tx"><div class="cat">'+(it.tags||[]).map(esc).join(" · ")+'</div><h3>'+hl(it.title)+'</h3><div class="avail">'+avail+' · all sizes on Amazon</div><div class="acts">'+main+(also.length?'<span class="avail">Also: '+also.join(" · ")+'</span>':'')+'</div></div></article>';
+    var also=(l.redbubble&&l.amazon)?'<span class="avail">Also on <a class="mini" href="'+esc(l.redbubble)+'" target="_blank" rel="noopener">Redbubble</a></span>':'';
+    var cat=(it.topics||[]).concat(it.occasions||[]).slice(0,3);
+    return '<article class="card"><a class="ph" href="'+esc(link(it))+'" target="_blank" rel="noopener" tabindex="-1"><img src="'+esc(it.image)+'" alt="'+esc(it.alt||it.title)+'" loading="lazy">'+(isNew(it)?'<span class="badge">New</span>':'')+'<span class="quick">See sizes &amp; colors →</span></a>'+
+      '<div class="tx"><div class="cat">'+cat.map(esc).join(" · ")+'</div><h3>'+hl(it.title)+'</h3><div class="avail">T-shirt · all sizes on Amazon</div><div class="acts">'+main+also+'</div></div></article>';
   }
-  function filtered(){
-    var q=st.q.toLowerCase();
-    var list=items.filter(function(it){
-      if(st.tag!=="All"&&(it.tags||[]).indexOf(st.tag)<0)return false;
-      if(st.type==="hoodie"&&!hasHoodie(it))return false;
-      if(st.type==="tee"&&!isTee(it))return false;
-      if(q){var hay=[it.title,it.blurb,(it.tags||[]).join(" "),(it.keywords||[]).join(" "),it.product].join(" ").toLowerCase();if(hay.indexOf(q)<0)return false;}
-      return true;
+  function matches(it){
+    if(sel.t.length&&!sel.t.some(function(v){return (it.topics||[]).indexOf(v)>=0;}))return false;
+    if(sel.o.length&&!sel.o.some(function(v){return (it.occasions||[]).indexOf(v)>=0;}))return false;
+    if(sel.k.length){var ks=(it.keywords||[]).map(function(k){return String(k).toLowerCase();});if(!sel.k.some(function(v){return ks.indexOf(v)>=0;}))return false;}
+    if(q){var hay=[it.title,it.blurb,(it.topics||[]).join(" "),(it.occasions||[]).join(" "),(it.keywords||[]).join(" ")].join(" ").toLowerCase();if(hay.indexOf(q.toLowerCase())<0)return false;}
+    return true;
+  }
+  function renderSide(){
+    ["t","o"].forEach(function(g){
+      var list=count(GROUPS[g]),box=$(g==="t"?"#optT":"#optO");
+      box.innerHTML=list.length?list.map(function(x){return '<label class="opt"><input type="checkbox" data-g="'+g+'" value="'+esc(x.v)+'"'+(sel[g].indexOf(x.v)>=0?" checked":"")+'>'+esc(x.v)+'<span class="n">'+x.n+'</span></label>';}).join(""):'<p class="sidesub">Coming soon</p>';
+      var s=$(g==="t"?"#selT":"#selO");s.hidden=!sel[g].length;s.textContent=sel[g].length;
     });
-    list.sort(st.sort==="az"?function(a,b){return String(a.title).localeCompare(String(b.title));}:function(a,b){return String(b.date).localeCompare(String(a.date));});
-    return list;
+    var kws=kwCount(),shown=kwAll?kws:kws.slice(0,12);
+    $("#optK").innerHTML=shown.map(function(x){return '<button class="kw" type="button" data-k="'+esc(x.v)+'" aria-pressed="'+(sel.k.indexOf(x.v)>=0)+'">'+esc(x.v)+'<span class="n">'+x.n+'</span></button>';}).join("");
+    $("#moreK").hidden=kws.length<=12;$("#moreK").textContent=kwAll?"Show less":"Show more ("+(kws.length-12)+")";
+    $("#selK").hidden=!sel.k.length;$("#selK").textContent=sel.k.length;
+    $("#clearAll").hidden=!active()&&!q;
   }
   function render(){
-    var tags=tagsOf();
-    $("#chips").innerHTML=[{t:"All",n:items.length}].concat(tags).map(function(x){return '<button class="chip" type="button" data-t="'+esc(x.t)+'" aria-pressed="'+(x.t===st.tag)+'">'+esc(x.t)+'<span class="n">'+x.n+'</span></button>';}).join("");
-    [].forEach.call(document.querySelectorAll("#seg button"),function(b){b.setAttribute("aria-pressed",String(b.dataset.t===st.type));});
-    $("#sort").value=st.sort;
-    var list=filtered();
-    $("#shopTitle").textContent=st.q?'Results for “'+st.q+'”':(st.tag==="All"?"All designs":st.tag+" designs");
-    $("#count").hidden=false;
+    renderSide();
+    var list=items.filter(matches);
+    list.sort(sort==="az"?function(a,b){return String(a.title).localeCompare(String(b.title));}:function(a,b){return String(b.date).localeCompare(String(a.date));});
+    var filtering=active()>0||!!q;
+    document.body.classList.toggle("filtering",filtering);
+    $("#shopTitle").textContent=q?'Results for “'+q+'”':(filtering?"Your selection":"All designs");
     $("#count").innerHTML='<b>'+list.length+'</b> '+(list.length===1?"design":"designs");
+    var pills=[];["t","o","k"].forEach(function(g){sel[g].forEach(function(v){pills.push('<button class="pill" type="button" data-g="'+g+'" data-v="'+esc(v)+'">'+esc(v)+' <span aria-hidden="true">×</span></button>');});});
+    if(q)pills.push('<button class="pill" type="button" data-g="q" data-v="">“'+esc(q)+'” <span aria-hidden="true">×</span></button>');
+    $("#pills").innerHTML=pills.join("");$("#pills").hidden=!pills.length;
+    var n=active();$("#fN").hidden=!n;$("#fN").textContent=n;
     $("#grid").innerHTML=list.map(card).join("");
     $("#empty").hidden=list.length>0;
-    $("#clear").hidden=!st.q;
+    $("#clear").hidden=!q;
+    $("#showRes").textContent="Show "+list.length+" "+(list.length===1?"design":"designs");
+    $("#sideSub").textContent=filtering?list.length+" of "+items.length+" designs":"Find your thing.";
   }
-  function go(tag){st.tag=tag;st.q="";$("#q").value="";try{history.replaceState(null,"",tag==="All"?location.pathname:"#hobby="+encodeURIComponent(tag));}catch(e){}render();$("#shop").scrollIntoView({behavior:"smooth"});}
+  function toTop(){if(window.innerWidth>900)$("#shop").scrollIntoView({behavior:"smooth"});}
+  function toggle(g,v){var a=sel[g],i=a.indexOf(v);if(i>=0)a.splice(i,1);else a.push(v);render();toTop();}
   function fig(it,cls,tag){return '<figure class="'+cls+'"><a href="'+esc(link(it))+'" target="_blank" rel="noopener"><img src="'+esc(it.image)+'" alt="'+esc(it.alt||it.title)+'">'+(tag?'<span class="tag">'+esc(it.title)+' →</span>':'')+'</a></figure>';}
+  function openDrawer(on){$("#side").classList.toggle("open",on);$("#drawerBar").classList.toggle("open",on);$("#scrim").hidden=!on;document.body.style.overflow=on?"hidden":"";}
+
   function show(data){
     items=(data&&data.items||[]).slice().sort(function(a,b){return String(b.date).localeCompare(String(a.date));});
     if(data&&data.preview) $("#previewBar").hidden=false;
-    if(!items.length){$("#soon").hidden=false;$("#collage").hidden=true;return;}
+    if(!items.length){$("#soon").hidden=false;$("#collage").hidden=true;renderSide();return;}
     $("#collage").innerHTML='<div class="sticker" aria-hidden="true">NEW<br>DROP</div>'+fig(items[0],"c1",true)+(items[1]?fig(items[1],"c2"):"")+(items[2]?fig(items[2],"c3"):"");
     $("#new").hidden=false;
     $("#newRow").innerHTML=items.slice(0,8).map(card).join("");
-    var tags=tagsOf();
-    if(tags.length>1){
-      $("#hobbies").hidden=false;
-      $("#hobbyGrid").innerHTML=tags.map(function(x){return '<button class="hobby" type="button" data-t="'+esc(x.t)+'"><img src="'+esc(x.img)+'" alt="" loading="lazy"><span class="lbl"><span><b>'+esc(x.t)+'</b><small>'+x.n+' '+(x.n===1?"design":"designs")+'</small></span><span class="arr">'+arrow+'</span></span></button>';}).join("");
-    }
     var sp=items.length>=4?[items[3],items[1]]:items.slice(0,2);
     $("#storyPics").innerHTML=sp.map(function(it){return '<img src="'+esc(it.image)+'" alt="" loading="lazy">';}).join("");
-    if(st.tag!=="All"&&!tags.some(function(x){return x.t===st.tag;}))st.tag="All";
     $("#toolbar").hidden=false;
     render();
   }
-  $("#chips").addEventListener("click",function(e){var b=e.target.closest(".chip");if(b){st.tag=b.dataset.t;try{history.replaceState(null,"",st.tag==="All"?location.pathname:"#hobby="+encodeURIComponent(st.tag));}catch(x){}render();}});
-  $("#hobbyGrid").addEventListener("click",function(e){var b=e.target.closest(".hobby");if(b)go(b.dataset.t);});
-  $("#seg").addEventListener("click",function(e){var b=e.target.closest("button");if(b){st.type=b.dataset.t;render();}});
-  $("#sort").addEventListener("change",function(){st.sort=this.value;render();});
-  var tmr;$("#q").addEventListener("input",function(){var v=this.value.trim();clearTimeout(tmr);tmr=setTimeout(function(){var first=!st.q&&v;st.q=v;if(v)st.tag="All";if(items.length){render();if(first)$("#shop").scrollIntoView({behavior:"smooth"});}},150);});
-  $("#clear").addEventListener("click",function(){$("#q").value="";st.q="";render();$("#q").focus();});
-  $("#reset").addEventListener("click",function(){st={tag:"All",type:"all",sort:st.sort,q:""};$("#q").value="";render();});
-  var tb=$("#toolbar");window.addEventListener("scroll",function(){tb.classList.toggle("stuck",tb.getBoundingClientRect().top<=parseFloat(getComputedStyle(tb).top)+1);},{passive:true});
+  $("#side").addEventListener("change",function(e){var c=e.target;if(c.matches('input[type=checkbox]'))toggle(c.dataset.g,c.value);});
+  $("#optK").addEventListener("click",function(e){var b=e.target.closest(".kw");if(b)toggle("k",b.dataset.k);});
+  $("#moreK").addEventListener("click",function(){kwAll=!kwAll;renderSide();});
+  $("#pills").addEventListener("click",function(e){var b=e.target.closest(".pill");if(!b)return;if(b.dataset.g==="q"){q="";$("#q").value="";render();}else toggle(b.dataset.g,b.dataset.v);});
+  function clearAll(){sel={t:[],o:[],k:[]};q="";$("#q").value="";render();}
+  $("#clearAll").addEventListener("click",clearAll);
+  $("#reset").addEventListener("click",clearAll);
+  $("#sort").addEventListener("change",function(){sort=this.value;render();});
+  $("#openF").addEventListener("click",function(){openDrawer(true);});
+  $("#scrim").addEventListener("click",function(){openDrawer(false);});
+  $("#showRes").addEventListener("click",function(){openDrawer(false);$("#shop").scrollIntoView({behavior:"smooth"});});
+  document.addEventListener("keydown",function(e){if(e.key==="Escape"&&$("#side").classList.contains("open"))openDrawer(false);});
+  var tmr;$("#q").addEventListener("input",function(){var v=this.value.trim();clearTimeout(tmr);tmr=setTimeout(function(){var first=!q&&v;q=v;if(items.length){render();if(first)$("#shop").scrollIntoView({behavior:"smooth"});}},150);});
+  $("#clear").addEventListener("click",function(){$("#q").value="";q="";render();$("#q").focus();});
   fetch("products.json",{cache:"no-store"}).then(function(r){return r.ok?r.json():{items:[]};}).then(show).catch(function(){show({items:[]});});
 })();
 </script>
