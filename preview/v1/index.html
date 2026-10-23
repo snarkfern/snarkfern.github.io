@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Snarkfern – Funny shirts for people with hobbies</title>
+<meta name="description" content="Snarkfern – witty, sarcastic and minimalist t-shirt and hoodie designs for people with hobbies. Newest designs first.">
+<meta property="og:title" content="Snarkfern">
+<meta property="og:description" content="Funny shirts for people with hobbies. Newest designs first.">
+<meta name="robots" content="noindex,nofollow">
+<meta name="theme-color" content="#1F3B2D">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231F3B2D'/%3E%3Cpath d='M32 52V14M32 20l-9-6M32 28l-12-7M32 36l-13-6M32 44l-11-4M32 20l9-6M32 28l12-7M32 36l13-6M32 44l11-4' stroke='%23F4EFE4' stroke-width='3.5' stroke-linecap='round' fill='none'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Figtree:wght@400;500;600;700&display=swap">
+<style>
+:root{
+  --bg:#F4EFE4; --paper:#FFFDF8; --ink:#1B241F; --muted:#5E685F; --line:#E2DACB;
+  --forest:#1F3B2D; --forest-2:#2C5240; --cream:#F4EFE4; --accent:#E8743B; --accent-ink:#1B1208;
+  --shadow:0 1px 2px rgba(31,59,45,.06),0 10px 30px rgba(31,59,45,.10);
+  --display:"Bricolage Grotesque","Avenir Next","Segoe UI",system-ui,sans-serif;
+  --body:"Figtree","Segoe UI",system-ui,sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#101814; --paper:#17221C; --ink:#EEF1EA; --muted:#9FAAA0; --line:#26362D;
+  --forest:#0E1B15; --forest-2:#1C3327; --shadow:0 1px 2px rgba(0,0,0,.4),0 12px 30px rgba(0,0,0,.35); color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#101814; --paper:#17221C; --ink:#EEF1EA; --muted:#9FAAA0; --line:#26362D;
+  --forest:#0E1B15; --forest-2:#1C3327; --shadow:0 1px 2px rgba(0,0,0,.4),0 12px 30px rgba(0,0,0,.35); color-scheme:dark}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.5;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit}
+.wrap{max-width:1180px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left));padding-right:max(16px,env(safe-area-inset-right))}
+[hidden]{display:none!important}
+
+/* header */
+.top{background:var(--forest);color:var(--cream);padding-top:env(safe-area-inset-top)}
+.top .wrap{display:flex;align-items:center;gap:14px;padding-block:16px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+.brand svg{width:34px;height:34px;flex:none}
+.brand b{font-family:var(--display);font-weight:800;font-size:26px;letter-spacing:-.02em}
+.spacer{flex:1}
+.social{display:flex;gap:8px}
+.social a{display:grid;place-items:center;width:38px;height:38px;border-radius:999px;border:1px solid rgba(244,239,228,.3);text-decoration:none}
+.social a:hover{background:rgba(244,239,228,.12)}
+.social svg{width:18px;height:18px}
+
+.hero{background:var(--forest);color:var(--cream);padding-bottom:28px}
+.hero h1{font-family:var(--display);font-weight:800;font-size:clamp(30px,6vw,56px);line-height:1;letter-spacing:-.03em;margin:6px 0 10px;max-width:16ch;text-wrap:balance}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.hero p{margin:0;color:rgba(244,239,228,.78);max-width:52ch}
+
+/* newest */
+.newest{margin-top:-6px;padding-top:26px}
+.label{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin:0 0 10px}
+.feature{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:0;background:var(--paper);border:1px solid var(--line);border-radius:20px;overflow:hidden;box-shadow:var(--shadow)}
+.feature .ph{aspect-ratio:4/5;background:var(--line)}
+.feature .ph img{width:100%;height:100%;object-fit:cover}
+.feature .tx{padding:clamp(18px,4vw,40px);display:flex;flex-direction:column;justify-content:center;gap:12px}
+.feature h2{font-family:var(--display);font-weight:800;font-size:clamp(24px,3.6vw,38px);line-height:1.05;letter-spacing:-.02em;margin:0;text-wrap:balance}
+.new{align-self:flex-start;background:var(--accent);color:var(--accent-ink);font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;border-radius:999px;padding:4px 10px}
+@media (max-width:760px){.feature{grid-template-columns:minmax(0,1fr)}}
+
+.btns{display:flex;gap:8px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:8px;text-decoration:none;font-weight:700;font-size:15px;border-radius:12px;padding:12px 16px;border:1px solid var(--line);background:var(--paper)}
+.btn.primary{background:var(--forest);color:var(--cream);border-color:var(--forest)}
+.btn.primary:hover{background:var(--forest-2)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .btn.primary{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}}
+:root[data-theme="dark"] .btn.primary{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.btn:hover{transform:translateY(-1px)}
+.btn small{font-weight:600;opacity:.75}
+
+/* filters + grid */
+.shop{padding-block:34px 60px}
+.bar{display:flex;align-items:end;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.bar h2{font-family:var(--display);font-weight:800;font-size:26px;margin:0;letter-spacing:-.02em}
+.chips{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;margin-inline:-16px;padding:2px 16px}
+.chips::-webkit-scrollbar{display:none}
+.chip{flex:none;border:1px solid var(--line);background:var(--paper);border-radius:999px;padding:7px 14px;font:inherit;font-size:14px;font-weight:600;color:var(--ink);cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--forest);border-color:var(--forest);color:var(--cream)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:16px}
+@media (max-width:520px){.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:16px;overflow:hidden;display:flex;flex-direction:column;box-shadow:var(--shadow)}
+.card .ph{aspect-ratio:4/5;background:var(--line);overflow:hidden}
+.card .ph img{width:100%;height:100%;object-fit:cover;transition:transform .3s ease}
+.card:hover .ph img{transform:scale(1.03)}
+.card .tx{padding:12px 12px 14px;display:flex;flex-direction:column;gap:8px;flex:1}
+.card h3{font-size:15px;line-height:1.25;margin:0;font-weight:700}
+.tags{display:flex;gap:4px;flex-wrap:wrap}
+.tag{font-size:11px;font-weight:700;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:1px 8px}
+.card .btns{margin-top:auto}
+.card .btn{padding:9px 11px;font-size:13.5px;border-radius:10px;flex:1;justify-content:center}
+@media (prefers-reduced-motion:reduce){.card .ph img,.btn{transition:none}.card:hover .ph img{transform:none}.btn:hover{transform:none}}
+
+.soon{background:var(--paper);border:1px dashed var(--line);border-radius:20px;padding:40px 20px;text-align:center}
+.soon h2{font-family:var(--display);font-weight:800;font-size:28px;margin:0 0 6px}
+.soon p{margin:0 auto;color:var(--muted);max-width:44ch}
+
+footer{border-top:1px solid var(--line);color:var(--muted);font-size:13px;padding-block:22px 34px}
+footer .wrap{display:flex;gap:10px 20px;flex-wrap:wrap;justify-content:space-between}
+.preview{background:var(--accent);color:var(--accent-ink);text-align:center;font-weight:700;font-size:13px;padding:6px 12px}
+</style>
+</head>
+<body>
+<div class="preview" id="previewBar" hidden>PREVIEW – sample data, not live products</div>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="./" aria-label="Snarkfern home">
+      <svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#F4EFE4"/><path d="M32 52V14M32 20l-9-6M32 28l-12-7M32 36l-13-6M32 44l-11-4M32 20l9-6M32 28l12-7M32 36l13-6M32 44l11-4" stroke="#1F3B2D" stroke-width="3.5" stroke-linecap="round" fill="none"/></svg>
+      <b>Snarkfern</b>
+    </a>
+    <div class="spacer"></div>
+    <nav class="social" aria-label="Social">
+      <a href="https://www.instagram.com/snarkfern/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a>
+      <a href="https://www.pinterest.com/snarkfern/" target="_blank" rel="noopener" aria-label="Pinterest"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-3.6 19.3c-.1-.8-.2-2 0-2.9l1.2-5s-.3-.6-.3-1.5c0-1.4.8-2.5 1.8-2.5.9 0 1.3.6 1.3 1.4 0 .9-.6 2.2-.8 3.4-.3 1 .5 1.8 1.5 1.8 1.8 0 3.1-1.9 3.1-4.6 0-2.4-1.7-4.1-4.2-4.1-2.9 0-4.5 2.1-4.5 4.4 0 .9.3 1.8.8 2.3l.1.4-.3 1.1c0 .2-.2.2-.4.1-1.3-.6-2.1-2.5-2.1-4 0-3.3 2.4-6.3 6.9-6.3 3.6 0 6.4 2.6 6.4 6 0 3.6-2.3 6.5-5.4 6.5-1.1 0-2.1-.6-2.4-1.2l-.7 2.5c-.2.9-.9 2.1-1.3 2.8A10 10 0 1 0 12 2z"/></svg></a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <h1>Funny shirts for people <em>with hobbies.</em></h1>
+    <p>Sarcastic, witty and minimalist designs for hikers, puzzlers, dog people and everyone in between. Newest designs always on top.</p>
+  </div>
+</section>
+
+<main>
+  <section class="newest wrap" id="newestWrap" hidden>
+    <p class="label">Newest design</p>
+    <article class="feature" id="feature"></article>
+  </section>
+
+  <section class="shop wrap">
+    <div class="bar">
+      <h2 id="shopTitle">All designs</h2>
+      <div class="chips" id="chips" role="toolbar" aria-label="Filter by topic"></div>
+    </div>
+    <div class="grid" id="grid"></div>
+    <div class="soon" id="soon" hidden>
+      <h2>First designs dropping soon</h2>
+      <p>We are printing the first batch right now. Follow us on Instagram or Pinterest to see them first.</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© <span id="yr"></span> Snarkfern. Independent designs, printed on demand and shipped by Amazon and Redbubble.</span>
+    <span>Prices and availability are shown on the store page.</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var $=function(s){return document.querySelector(s);};
+  var esc=function(s){return String(s==null?"":s).replace(/[&<>"']/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c];});};
+  $("#yr").textContent=new Date().getFullYear();
+  var filter="All";
+  var items=[];
+
+  function buttons(it,small){
+    var l=it.links||{}, out=[];
+    if(l.amazon) out.push('<a class="btn primary" href="'+esc(l.amazon)+'" target="_blank" rel="noopener">'+(small?'Amazon':'Shop on Amazon')+(it.product&&!small?' <small>'+esc(it.product)+'</small>':'')+'</a>');
+    if(l.amazon_hoodie) out.push('<a class="btn" href="'+esc(l.amazon_hoodie)+'" target="_blank" rel="noopener">Hoodie</a>');
+    if(l.redbubble) out.push('<a class="btn" href="'+esc(l.redbubble)+'" target="_blank" rel="noopener">Redbubble</a>');
+    return out.join("");
+  }
+  function card(it){
+    return '<article class="card"><a class="ph" href="'+esc((it.links||{}).amazon||(it.links||{}).redbubble||"#")+'" target="_blank" rel="noopener"><img src="'+esc(it.image)+'" alt="'+esc(it.alt||it.title)+'" loading="lazy"></a>'+
+      '<div class="tx"><h3>'+esc(it.title)+'</h3><div class="tags">'+(it.tags||[]).map(function(t){return '<span class="tag">'+esc(t)+'</span>';}).join("")+'</div><div class="btns">'+buttons(it,true)+'</div></div></article>';
+  }
+  function render(){
+    var tags=["All"];
+    items.forEach(function(it){(it.tags||[]).forEach(function(t){if(tags.indexOf(t)<0)tags.push(t);});});
+    $("#chips").innerHTML=tags.length>2?tags.map(function(t){return '<button class="chip" aria-pressed="'+(t===filter)+'">'+esc(t)+'</button>';}).join(""):"";
+    var list=items.filter(function(it){return filter==="All"||(it.tags||[]).indexOf(filter)>=0;});
+    $("#shopTitle").textContent=filter==="All"?"All designs":filter;
+    $("#grid").innerHTML=list.map(card).join("");
+  }
+  function show(data){
+    items=(data&&data.items||[]).slice().sort(function(a,b){return String(b.date).localeCompare(String(a.date));});
+    if(data&&data.preview) $("#previewBar").hidden=false;
+    if(!items.length){$("#soon").hidden=false;return;}
+    var f=items[0];
+    $("#newestWrap").hidden=false;
+    $("#feature").innerHTML='<div class="ph"><img src="'+esc(f.image)+'" alt="'+esc(f.alt||f.title)+'"></div><div class="tx"><span class="new">New</span><h2>'+esc(f.title)+'</h2>'+(f.blurb?'<p>'+esc(f.blurb)+'</p>':'')+'<div class="btns">'+buttons(f,false)+'</div></div>';
+    render();
+  }
+  $("#chips").addEventListener("click",function(e){var b=e.target.closest(".chip");if(!b)return;filter=b.textContent;render();});
+  fetch("products.json",{cache:"no-store"}).then(function(r){return r.ok?r.json():{items:[]};}).then(show).catch(function(){show({items:[]});});
+})();
+</script>
+</body>
+</html>
