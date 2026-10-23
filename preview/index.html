@@ -67,6 +67,8 @@ a{color:inherit}
 .btn{display:inline-flex;align-items:center;gap:8px;text-decoration:none;font-weight:700;font-size:15px;border-radius:12px;padding:12px 16px;border:1px solid var(--line);background:var(--paper)}
 .btn.primary{background:var(--forest);color:var(--cream);border-color:var(--forest)}
 .btn.primary:hover{background:var(--forest-2)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .btn.primary{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}}
+:root[data-theme="dark"] .btn.primary{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
 .btn:hover{transform:translateY(-1px)}
 .btn small{font-weight:600;opacity:.75}
 
